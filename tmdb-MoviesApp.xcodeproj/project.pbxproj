@@ -8,17 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		441F81765278E23CB5AA5F65 /* Pods_tmdb_MoviesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C137C88A76CCBFCE1DFB3829 /* Pods_tmdb_MoviesApp.framework */; };
+		BC3518DE29586896004FAE64 /* MainView+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3518DD29586896004FAE64 /* MainView+TextField.swift */; };
+		BC3518E229587AD5004FAE64 /* ShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3518E129587AD5004FAE64 /* ShadowExtension.swift */; };
 		BCD8B95B29584693009152DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD8B95A29584693009152DE /* AppDelegate.swift */; };
 		BCD8B95D29584693009152DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD8B95C29584693009152DE /* SceneDelegate.swift */; };
 		BCD8B95F29584693009152DE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD8B95E29584693009152DE /* MainViewController.swift */; };
 		BCD8B96229584693009152DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD8B96029584693009152DE /* Main.storyboard */; };
 		BCD8B96429584696009152DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD8B96329584696009152DE /* Assets.xcassets */; };
 		BCD8B96729584696009152DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD8B96529584696009152DE /* LaunchScreen.storyboard */; };
+		BCDD7A212958663100AA3425 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDD7A202958663100AA3425 /* MainPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D25EE5DE6B9CCC066BB7C6E /* Pods-tmdb-MoviesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-MoviesApp.release.xcconfig"; path = "Target Support Files/Pods-tmdb-MoviesApp/Pods-tmdb-MoviesApp.release.xcconfig"; sourceTree = "<group>"; };
 		4DF5771A9651DDCB53BC8F12 /* Pods-tmdb-MoviesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-MoviesApp.debug.xcconfig"; path = "Target Support Files/Pods-tmdb-MoviesApp/Pods-tmdb-MoviesApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BC3518DD29586896004FAE64 /* MainView+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+TextField.swift"; sourceTree = "<group>"; };
+		BC3518E129587AD5004FAE64 /* ShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowExtension.swift; sourceTree = "<group>"; };
 		BCD8B95729584693009152DE /* tmdb-MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tmdb-MoviesApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD8B95A29584693009152DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD8B95C29584693009152DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +32,7 @@
 		BCD8B96329584696009152DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCD8B96629584696009152DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD8B96829584696009152DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCDD7A202958663100AA3425 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		C137C88A76CCBFCE1DFB3829 /* Pods_tmdb_MoviesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmdb_MoviesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -59,6 +65,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BC3518E029587AC7004FAE64 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC3518E129587AD5004FAE64 /* ShadowExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BCD8B94E29584693009152DE = {
 			isa = PBXGroup;
 			children = (
@@ -80,15 +94,82 @@
 		BCD8B95929584693009152DE /* tmdb-MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
-				BCD8B95A29584693009152DE /* AppDelegate.swift */,
-				BCD8B95C29584693009152DE /* SceneDelegate.swift */,
-				BCD8B95E29584693009152DE /* MainViewController.swift */,
-				BCD8B96029584693009152DE /* Main.storyboard */,
-				BCD8B96329584696009152DE /* Assets.xcassets */,
+				BC3518E029587AC7004FAE64 /* Extensions */,
+				BCDD7A1C295865CD00AA3425 /* App */,
+				BCDD7A1B295865C000AA3425 /* Assets */,
+				BCDD7A1A295865B500AA3425 /* Configuration */,
+				BCDD7A18295865A300AA3425 /* Modules */,
 				BCD8B96529584696009152DE /* LaunchScreen.storyboard */,
-				BCD8B96829584696009152DE /* Info.plist */,
 			);
 			path = "tmdb-MoviesApp";
+			sourceTree = "<group>";
+		};
+		BCDD7A18295865A300AA3425 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BCDD7A19295865A900AA3425 /* MainView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BCDD7A19295865A900AA3425 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				BCDD7A1F295865FA00AA3425 /* Model */,
+				BCDD7A1D295865E200AA3425 /* View */,
+				BCDD7A1E295865F200AA3425 /* Presenter */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		BCDD7A1A295865B500AA3425 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BCD8B96829584696009152DE /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		BCDD7A1B295865C000AA3425 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BCD8B96329584696009152DE /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BCDD7A1C295865CD00AA3425 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BCD8B95A29584693009152DE /* AppDelegate.swift */,
+				BCD8B95C29584693009152DE /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BCDD7A1D295865E200AA3425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCD8B95E29584693009152DE /* MainViewController.swift */,
+				BCD8B96029584693009152DE /* Main.storyboard */,
+				BC3518DD29586896004FAE64 /* MainView+TextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCDD7A1E295865F200AA3425 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BCDD7A202958663100AA3425 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BCDD7A1F295865FA00AA3425 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +289,9 @@
 				BCD8B95F29584693009152DE /* MainViewController.swift in Sources */,
 				BCD8B95B29584693009152DE /* AppDelegate.swift in Sources */,
 				BCD8B95D29584693009152DE /* SceneDelegate.swift in Sources */,
+				BCDD7A212958663100AA3425 /* MainPresenter.swift in Sources */,
+				BC3518DE29586896004FAE64 /* MainView+TextField.swift in Sources */,
+				BC3518E229587AD5004FAE64 /* ShadowExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5N79QDCTNF;
-				INFOPLIST_FILE = "tmdb-MoviesApp/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/tmdb-MoviesApp/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,7 +461,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5N79QDCTNF;
-				INFOPLIST_FILE = "tmdb-MoviesApp/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/tmdb-MoviesApp/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

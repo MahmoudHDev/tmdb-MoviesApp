@@ -7,8 +7,11 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+
+class MainViewController: UIViewController, MainPresenterPr {
     // MARK:- Properties
+    var presenter: MainPresenterPr?
+    var tap = UITapGestureRecognizer()
     
     // MARK:- Outlets
     @IBOutlet weak var logoImgView: UIImageView!
@@ -22,8 +25,13 @@ class MainViewController: UIViewController {
     // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = MainPresenter(view: self)
         self.setupUIStyle()
-        // Do any additional setup after loading the view.
+        self.setupTextFieldDelegate()
+        self.setupButtonsStyle()
+        
+
+
     }
     
     // MARK:- Functions
@@ -31,12 +39,28 @@ class MainViewController: UIViewController {
         
         usernameTextField.layer.cornerRadius    = 18
         passwordTextField.layer.cornerRadius    = 18
+        
         usernameTextField.clipsToBounds         = true
         passwordTextField.clipsToBounds         = true
         
+    }
+    
+    private func setupButtonsStyle() {
+        
+        tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        // Login Button
         loginBtn.layer.cornerRadius             = 18
+        loginBtn.clipsToBounds                  = true
+        loginBtn.isEnabled                      = false
         
-        
+    }
+    
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     // MARK:- Actions
@@ -49,5 +73,7 @@ class MainViewController: UIViewController {
         print("Join us!")
     }
 }
+
+
 
 // "https://api.themoviedb.org/3/movie/550?api_key=7ceb25c5f86b2b10d9784044bb2c7fb3"
